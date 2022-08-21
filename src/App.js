@@ -1,11 +1,16 @@
 import './App.css';
+import {BrowserRouter, Route} from "react-router-dom"
 import Header from './components/header';
 
 function App() {
   return (
-    <div className="App">
+    <BrowserRouter>
       <Header/>
-    </div>
+      <div>
+        <Route path='/' exact>
+        </Route>
+      </div>
+    </BrowserRouter>
   );
 }
 
