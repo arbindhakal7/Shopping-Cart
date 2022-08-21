@@ -8,6 +8,10 @@ function App() {
       <Header/>
       <div>
         <Route path='/' exact>
+          <Home/>
+        </Route>
+        <Route path='/cart' exact>
+          <Cart/>
         </Route>
       </div>
     </BrowserRouter>
