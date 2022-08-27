@@ -1,11 +1,17 @@
 import { CartState } from '../context/context'
 
 const Home = () => {
-    const {state} = CartState()
+    const { state : { products },
+    } = CartState()
 
-    console.log(state);
-    return <div> Home </div>
-    
+    return <div className='home'>
+        <div className='prductContainer'>
+        {products.map((prod) => {
+        return <span>{prod.name}</span>
+        })}
+        </div>
+    </div>
+
 }
 
 export default Home

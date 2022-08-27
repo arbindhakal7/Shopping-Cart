@@ -10,9 +10,8 @@ function App() {
       <Header/>
       <div className='App'>
         <Routes>
-      <Route  exact path='/' component={Home}/>
-        <Route path='/cart' component={Cart}>
-        </Route>
+        <Route path="/" element={<Home />} /> 
+        <Route path='/cart' element={<Cart />} />
         </Routes>
       </div>
     </BrowserRouter>
