@@ -52,7 +52,6 @@ const Filters = () => {
             <label style={{ paddingRight:10 }}>Rating:</label>
             <Rating rating={rate} style={{ curson:"pointer" }} />
         </span>
-
         <Button variant="light">Clear Filters</Button>
     </div>
 )
