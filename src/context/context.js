@@ -34,5 +34,5 @@ const Context = ({ children }) => {
 export default Context
 
 export const CartState = () => {
-    return useContext() // useContext takes the context which is Cart in this file
+    return useContext(Cart) // useContext takes the context which is Cart in this file
 }
