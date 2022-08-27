@@ -1,7 +1,8 @@
 import React from 'react'
+import {Form, Button } from 'react-bootstrap'
 
-export const filter = () => {
-  return (
+const Filters = () => {
+    return (
     <div className='filters'>
         <span className='title'>Filter Products</span>
         <span>
@@ -43,6 +44,9 @@ export const filter = () => {
             id = {"inline-4"}
             />
         </span>
+        <Button variant="light">Clear Filters</Button>
     </div>
   )
 }
+
+export default Filters
