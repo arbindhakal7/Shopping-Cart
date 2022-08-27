@@ -1,4 +1,4 @@
-import { createContext, useReducer} from 'react'
+import { createContext, useContext, useReducer} from 'react'
 import faker from "faker";
 import { cartReducer } from './reducer';
 
@@ -28,7 +28,11 @@ const Context = ({ children }) => {
 
 
     //children will come from index.js
-    return <Cart.Provider>{children}</Cart.Provider> // wrap all of our react app
+    return <Cart.Provider value={{state, dispatch}}>{children}</Cart.Provider> // wrap all of our react app
 }
 
 export default Context
+
+export const CartState = () => {
+    return useContext() // useContext takes the context which is Cart in this file
+}
