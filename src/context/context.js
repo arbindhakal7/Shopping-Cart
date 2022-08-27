@@ -17,7 +17,14 @@ const Context = ({ children }) => {
         ratings: faker.random.arrayElement([1, 2, 3, 4, 5]),
     }));
     
-    console.log(products)
+    //useReducer Hook is the better alternative to the useState hook and is generally more preferred over the useState hook when you have complex state-building logic 
+    //or when the next state value depends upon its previous value or when the components are needed to be optimized
+    const [state, dispatch] = useReducer(cartReducer, {
+        products: products,
+        cart: [],
+    });
+    
+
 
     //children will come from index.js
     return <Cart.Provider>{children}</Cart.Provider> // wrap all of our react app
