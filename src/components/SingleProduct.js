@@ -4,7 +4,7 @@ import { Card } from 'react-bootstrap'
 const SingleProduct = ({ prod }) => {
     return <div className='prducts'>
         <Card>
-            <Card.Img variant = "top" src={ prod.img } alt={ prod.name } />
+            <Card.Img variant = "top" src={ prod.image } alt={ prod.name } />
         </Card>
     </div>
 
