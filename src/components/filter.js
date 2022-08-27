@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {Form, Button } from 'react-bootstrap'
+import Rating from './Rating'
 
 const Filters = () => {
+
+    const [rate, setRate] = useState(3)
+
     return (
     <div className='filters'>
         <span className='title'>Filter Products</span>
@@ -44,9 +48,14 @@ const Filters = () => {
             id = {"inline-4"}
             />
         </span>
+        <span>
+            <label style={{ paddingRight:10 }}>Rating:</label>
+            <Rating rating={rate} style={{ curson:"pointer" }} />
+        </span>
+
         <Button variant="light">Clear Filters</Button>
     </div>
-  )
+)
 }
 
 export default Filters
