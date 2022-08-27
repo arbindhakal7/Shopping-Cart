@@ -50,7 +50,7 @@ const Filters = () => {
         </span>
         <span>
             <label style={{ paddingRight:10 }}>Rating:</label>
-            <Rating rating={rate} style={{ curson:"pointer" }} />
+            <Rating rating={rate} onClick={(i) => setRate(i+1)} style={{ curson:"pointer" }} />  {/* setRate gives the user to select the ratings */}
         </span>
         <Button variant="light">Clear Filters</Button>
     </div>
