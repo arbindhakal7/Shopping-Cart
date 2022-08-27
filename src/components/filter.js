@@ -40,7 +40,7 @@ const Filters = () => {
             inline 
             label = "International Delivery Only"
             name = "group1"
-            type = "radio"
+            type = "checkbox"
             id = {"inline-4"}
             />
         </span>
