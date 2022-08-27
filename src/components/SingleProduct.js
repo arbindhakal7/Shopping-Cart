@@ -21,8 +21,8 @@ const SingleProduct = ({ prod }) => {
                 <Button variant = "danger">
                         Remove from Cart
                 </Button>
-                <Button>
-                        Add to Cart
+                <Button disabled = {!prod.inStock}>
+                        {!prod.inStock ? "Out of Stock" : "Add to Cart"}
                 </Button>
             </Card.Body>
         </Card>
