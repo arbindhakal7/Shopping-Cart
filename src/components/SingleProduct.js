@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card } from 'react-bootstrap'
+import { Button, Card } from 'react-bootstrap'
 import Rating from "./Rating";
 
 
@@ -18,6 +18,12 @@ const SingleProduct = ({ prod }) => {
                     )}
                     <Rating rating={prod.ratings} />
                 </Card.Subtitle>
+                <Button variant = "danger">
+                        Remove from Cart
+                </Button>
+                <Button>
+                        Add to Cart
+                </Button>
             </Card.Body>
         </Card>
     </div>
