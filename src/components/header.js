@@ -11,7 +11,7 @@ const Header = () => {
         state: { cart },
         dispatch,
         productDispatch,
-      } = CartState();
+    } = CartState();
     
 
     return <Navbar bg = "dark" variant = "dark" style={{height:80}}>
@@ -29,7 +29,7 @@ const Header = () => {
         <Dropdown alignRight>
             <Dropdown.Toggle variant="success">
                 <FaShoppingCart color="white" fontSize="25px" />
-            <Badge>{10}</Badge>
+            <Badge>{cart.length}</Badge>
             </Dropdown.Toggle>
 
             <Dropdown.Menu style={{ minWidth: 370 }}>
