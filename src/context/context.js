@@ -28,7 +28,8 @@ const Context = ({ children }) => {
 
 
     //children will come from index.js
-    return <Cart.Provider value={{state, dispatch}}>{children}</Cart.Provider> // wrap all of our react app
+    return (<Cart.Provider value={{state, dispatch}}>{children}</Cart.Provider> // wrap all of our react app
+    )
 }
 
 export default Context
