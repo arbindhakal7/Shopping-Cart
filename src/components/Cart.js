@@ -1,5 +1,7 @@
-import { ListGroup } from "react-bootstrap"
+import { Button, ListGroup } from "react-bootstrap"
 import { CartState } from "../context/context"
+import { useEffect, useState } from "react";
+
 
 const Cart = () => {
 
@@ -7,6 +9,17 @@ const Cart = () => {
         state: { cart },
         dispatch
     } = CartState()
+    const [total, setTotal] = useState();
+
+
+    //calculate total price
+    useEffect(() => {
+        setTotal(
+            //acc = accumulator and it will have a default value of 0
+          cart.reduce((acc, curr) => acc + Number(curr.price) * curr.qty, 0)
+        );
+    }, [cart]);
+
 
     return (
         <div className="home">
