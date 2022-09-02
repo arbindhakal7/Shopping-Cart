@@ -1,3 +1,4 @@
+import { ListGroup } from "react-bootstrap"
 import { CartState } from "../context/context"
 
 const Cart = () => {
@@ -8,8 +9,16 @@ const Cart = () => {
     } = CartState()
 
     return(
-        <div>
-        Cart    
+        <div className="home">
+            <div className="productContainer">
+                <ListGroup>
+                    {cart.map((prod) => (
+                            <span>
+                                { prod.name }
+                            </span>
+                        ))}
+                </ListGroup>
+            </div>    
         </div>
     )
 }
