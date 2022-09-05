@@ -7,6 +7,7 @@ const Filters = () => {
 
     const {productState: { byStock, byFastDelivery, sort, byRating }, productDispatch} = CartState()
 
+    
     return (
     <div className='filters'>
         <span className='title'>Filter Products</span>
@@ -17,6 +18,13 @@ const Filters = () => {
             name = "group1"
             type = "radio"
             id = {"inline-1"}
+            onChange={() =>
+                productDispatch({
+                type: "SORT_BY_PRICE",
+                payload: "lowToHigh",
+                })
+            }
+            checked={sort === "lowToHigh" ? true : false}     // reducer for filter switcher
             />
         </span>
 
@@ -27,6 +35,13 @@ const Filters = () => {
             name = "group1"
             type = "radio"
             id = {"inline-2"}
+            onChange={() =>
+                productDispatch({
+                type: "SORT_BY_PRICE",
+                payload: "highToLow",
+                })
+            }
+            checked={sort === "highToLow" ? true : false}
             />
         </span>
 
@@ -37,6 +52,12 @@ const Filters = () => {
             name = "group1"
             type = "checkbox"
             id = {"inline-3"}
+            onChange={() =>
+                productDispatch({
+                type: "FILTER_BY_STOCK",
+                })
+            }
+            checked={byStock}
             />
         </span>
 
@@ -47,8 +68,15 @@ const Filters = () => {
             name = "group1"
             type = "checkbox"
             id = {"inline-4"}
+            onChange={() =>
+                productDispatch({
+                type: "FILTER_BY_DELIVERY",
+                })
+            }
+            checked={byFastDelivery}
             />
         </span>
+
         <span>
             <label style={{ paddingRight:10 }}>Rating: </label>
             <Rating rating={byRating} onClick={(i) =>
@@ -60,7 +88,9 @@ const Filters = () => {
         style={{ cursor:"pointer" }}
             />
         </span>
+
         <Button variant="light">Clear Filters</Button>
+        
     </div>
 )
 }
