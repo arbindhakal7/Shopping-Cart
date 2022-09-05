@@ -23,6 +23,13 @@ const Header = () => {
             <Navbar.Text className="search">
                 <FormControl style={{ width: 500 }} placeholder="Search a product..."
                     className="m-auto"
+                    aria-label="Search"
+                    onChange={(e) => {
+                        productDispatch({
+                        type: "FILTER_BY_SEARCH",
+                        payload: e.target.value,
+                        });
+                    }}
                 />
             </Navbar.Text>
 
@@ -37,7 +44,7 @@ const Header = () => {
                         {cart.length > 0 ? (
                             <>
                                 {cart.map((prod) => (
-                                    <span className="cartitem" key={prod.id}>
+                                    <span className="cartItem" key={prod.id}>
                                         <img
                                             src={prod.image}
                                             className="cartItemImg"
