@@ -6,7 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Context from "./context/context";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
+root.render( 
   <React.StrictMode>
     <Context>
       <App />
