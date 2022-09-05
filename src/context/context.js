@@ -26,6 +26,13 @@ const Context = ({ children }) => {
     });
     
 
+    // reducer for filtering
+    const [productState, productDispatch] = useReducer(productReducer, {
+        byStock: false,
+        byFastDelivery: false,
+        byRating: 0,
+        searchQuery: "",
+    });
 
     //children will come from index.js
     return (<Cart.Provider value={{state, dispatch}}>{children}</Cart.Provider> // wrap all of our react app
