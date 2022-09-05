@@ -18,5 +18,8 @@ export const cartReducer = (state, action) => { //action can be increment or dec
         default:
             return state;
     }
+}
+
+export const productReducer = (state, action) => {
 
 }
