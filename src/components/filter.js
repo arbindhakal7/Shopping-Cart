@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import {Form, Button } from 'react-bootstrap'
+import { CartState } from '../context/context'
 import Rating from './Rating'
 
 const Filters = () => {
 
-    const [rate, setRate] = useState(3)
+    const {productState: { byStock, byFastDelivery, sort, byRating }, productDispatch} = CartState()
 
     return (
     <div className='filters'>
@@ -49,8 +50,15 @@ const Filters = () => {
             />
         </span>
         <span>
-            <label style={{ paddingRight:10 }}>Rating:</label>
-            <Rating rating={rate} onClick={(i) => setRate(i+1)} style={{ curson:"pointer" }} />  {/* setRate gives the user to select the ratings */}
+            <label style={{ paddingRight:10 }}>Rating: </label>
+            <Rating rating={byRating} onClick={(i) =>
+            productDispatch({
+            type: "FILTER_BY_RATING",
+            payload: i + 1,
+            })
+        }
+        style={{ cursor:"pointer" }}
+            />
         </span>
         <Button variant="light">Clear Filters</Button>
     </div>
