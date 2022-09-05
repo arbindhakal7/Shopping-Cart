@@ -21,5 +21,12 @@ export const cartReducer = (state, action) => { //action can be increment or dec
 }
 
 export const productReducer = (state, action) => {
+    switch (action.type) { 
+        case 'SORT_BY_PRICE':
+            return { ...state, sort:action.payload }
 
+
+        default:
+            return state
+    }
 }
